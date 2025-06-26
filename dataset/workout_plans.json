@@ -1,0 +1,119 @@
+[
+  {
+    "condition": "diabetes",
+    "risk": "high",
+    "days": [
+      { "day": "Monday", "workout": "30-min brisk walk", "description": "A light-intensity cardio workout to improve insulin sensitivity.", "duration": 30 },
+      { "day": "Tuesday", "workout": "Resistance band training", "description": "Simple strength training to support glucose metabolism.", "duration": 20 },
+      { "day": "Wednesday", "workout": "Low-impact aerobic dance", "description": "Fun, rhythm-based movement to lower blood sugar levels.", "duration": 25 },
+      { "day": "Thursday", "workout": "Chair squats", "description": "Lower body exercise to improve insulin response.", "duration": 15 },
+      { "day": "Friday", "workout": "Tai Chi basics", "description": "Gentle movements to enhance circulation and reduce glucose spikes.", "duration": 20 },
+      { "day": "Saturday", "workout": "30-min brisk walk", "description": "A light-intensity cardio workout to improve insulin sensitivity.", "duration": 30 },
+      { "day": "Sunday", "workout": "Chair squats", "description": "Lower body exercise to improve insulin response.", "duration": 15 }
+    ]
+  },
+  {
+    "condition": "diabetes",
+    "risk": "moderate",
+    "days": [
+      { "day": "Monday", "workout": "25-min fast-paced walking", "description": "Helps regulate blood sugar levels.", "duration": 25 },
+      { "day": "Tuesday", "workout": "Seated strength training", "description": "Improves insulin sensitivity with low strain.", "duration": 20 },
+      { "day": "Wednesday", "workout": "Balance training", "description": "Enhances stability and reduces fall risk.", "duration": 15 },
+      { "day": "Thursday", "workout": "Chair yoga", "description": "Relaxing movements for better glucose control.", "duration": 20 },
+      { "day": "Friday", "workout": "Resistance band training", "description": "Simple strength workouts for better metabolism.", "duration": 15 },
+      { "day": "Saturday", "workout": "25-min fast-paced walking", "description": "Helps regulate blood sugar levels.", "duration": 25 },
+      { "day": "Sunday", "workout": "Balance training", "description": "Enhances stability and reduces fall risk.", "duration": 15 }
+    ]
+  },
+  {
+    "condition": "diabetes",
+    "risk": "low",
+    "days": [
+      { "day": "Monday", "workout": "20-min light walk", "description": "General activity to maintain insulin response.", "duration": 20 },
+      { "day": "Tuesday", "workout": "Stretching routine", "description": "Improves flexibility and circulation.", "duration": 15 },
+      { "day": "Wednesday", "workout": "Simple aerobic steps", "description": "Boosts overall metabolic health.", "duration": 20 },
+      { "day": "Thursday", "workout": "Chair squats", "description": "Promotes leg strength and mobility.", "duration": 10 },
+      { "day": "Friday", "workout": "Seated leg raises", "description": "Light lower body movement.", "duration": 10 },
+      { "day": "Saturday", "workout": "20-min light walk", "description": "Maintains regular blood sugar levels.", "duration": 20 },
+      { "day": "Sunday", "workout": "Stretching routine", "description": "Improves flexibility and circulation.", "duration": 15 }
+    ]
+  },
+  {
+    "condition": "heart",
+    "risk": "high",
+    "days": [
+      { "day": "Monday", "workout": "Low-impact step aerobics", "description": "Strengthens cardiovascular function safely.", "duration": 20 },
+      { "day": "Tuesday", "workout": "Heart-healthy yoga", "description": "Improves heart rate and relaxation.", "duration": 25 },
+      { "day": "Wednesday", "workout": "Breathing exercises", "description": "Reduces stress and stabilizes blood pressure.", "duration": 10 },
+      { "day": "Thursday", "workout": "Light indoor cycling", "description": "Gentle cardio to support heart health.", "duration": 20 },
+      { "day": "Friday", "workout": "Seated arm lifts", "description": "Upper-body mobility for circulation.", "duration": 15 },
+      { "day": "Saturday", "workout": "Low-impact step aerobics", "description": "Strengthens cardiovascular function safely.", "duration": 20 },
+      { "day": "Sunday", "workout": "Heart-healthy yoga", "description": "Improves heart rate and relaxation.", "duration": 25 }
+    ]
+  },
+  {
+    "condition": "heart",
+    "risk": "moderate",
+    "days": [
+      { "day": "Monday", "workout": "Heart-healthy yoga", "description": "Relaxing yoga to improve cardiovascular health and lower blood pressure.", "duration": 20 },
+      { "day": "Tuesday", "workout": "Walking intervals", "description": "Alternating fast and slow walking to strengthen the heart.", "duration": 30 },
+      { "day": "Wednesday", "workout": "Seated leg raises", "description": "Gentle strength training to support circulation.", "duration": 15 },
+      { "day": "Thursday", "workout": "Breathing and meditation", "description": "Calming practice to reduce stress and stabilize heart rate.", "duration": 10 },
+      { "day": "Friday", "workout": "Light stationary cycling", "description": "Low-impact cardio to support heart function.", "duration": 20 },
+      { "day": "Saturday", "workout": "Heart-healthy yoga", "description": "Relaxing yoga to improve cardiovascular health and lower blood pressure.", "duration": 20 },
+      { "day": "Sunday", "workout": "Breathing and meditation", "description": "Calming practice to reduce stress and stabilize heart rate.", "duration": 10 }
+    ]
+  },
+  {
+    "condition": "heart",
+    "risk": "low",
+    "days": [
+      { "day": "Monday", "workout": "20-min walk in park", "description": "Gentle activity to maintain heart health.", "duration": 20 },
+      { "day": "Tuesday", "workout": "Stretch & reach exercises", "description": "Light flexibility work for cardiovascular support.", "duration": 10 },
+      { "day": "Wednesday", "workout": "Simple step-in-place", "description": "Boosts light activity levels.", "duration": 15 },
+      { "day": "Thursday", "workout": "Breathing and meditation", "description": "Lowers stress to support heart function.", "duration": 10 },
+      { "day": "Friday", "workout": "Arm circles and stretches", "description": "Improves circulation.", "duration": 10 },
+      { "day": "Saturday", "workout": "20-min walk in park", "description": "Gentle activity to maintain heart health.", "duration": 20 },
+      { "day": "Sunday", "workout": "Stretch & reach exercises", "description": "Light flexibility work for cardiovascular support.", "duration": 10 }
+    ]
+  },
+  {
+    "condition": "stroke",
+    "risk": "low",
+    "days": [
+      { "day": "Monday", "workout": "Stretch and balance drills", "description": "Mild exercises to improve balance and reduce stroke risk.", "duration": 15 },
+      { "day": "Tuesday", "workout": "Wall push-ups", "description": "Simple upper-body strength exercise for stroke recovery.", "duration": 10 },
+      { "day": "Wednesday", "workout": "Seated marching", "description": "Leg mobility exercise to improve blood flow and reduce clot risk.", "duration": 15 },
+      { "day": "Thursday", "workout": "Arm circles", "description": "Upper-body mobility workout for better coordination post-stroke.", "duration": 10 },
+      { "day": "Friday", "workout": "Heel-to-toe walk", "description": "Balance-focused exercise to strengthen motor control.", "duration": 10 },
+      { "day": "Saturday", "workout": "Stretch and balance drills", "description": "Mild exercises to improve balance and reduce stroke risk.", "duration": 15 },
+      { "day": "Sunday", "workout": "Seated marching", "description": "Leg mobility exercise to improve blood flow and reduce clot risk.", "duration": 15 }
+    ]
+  },
+  {
+    "condition": "stroke",
+    "risk": "moderate",
+    "days": [
+      { "day": "Monday", "workout": "Stretch and balance drills", "description": "Supports coordination and stroke recovery.", "duration": 15 },
+      { "day": "Tuesday", "workout": "Arm raise & lower", "description": "Light motor activity to engage upper body.", "duration": 10 },
+      { "day": "Wednesday", "workout": "Chair yoga", "description": "Promotes relaxation and balance.", "duration": 15 },
+      { "day": "Thursday", "workout": "Heel-to-toe walk", "description": "Improves gait and leg control.", "duration": 10 },
+      { "day": "Friday", "workout": "Side leg raises", "description": "Leg strength training with low intensity.", "duration": 10 },
+      { "day": "Saturday", "workout": "Stretch and balance drills", "description": "Supports coordination and stroke recovery.", "duration": 15 },
+      { "day": "Sunday", "workout": "Chair yoga", "description": "Promotes relaxation and balance.", "duration": 15 }
+    ]
+  },
+  {
+    "condition": "stroke",
+    "risk": "high",
+    "days": [
+      { "day": "Monday", "workout": "Seated marching", "description": "Gentle leg movements for circulation.", "duration": 10 },
+      { "day": "Tuesday", "workout": "Arm support push", "description": "Builds upper body control post-stroke.", "duration": 10 },
+      { "day": "Wednesday", "workout": "Stretching from chair", "description": "Maintains mobility safely.", "duration": 15 },
+      { "day": "Thursday", "workout": "Grip and release training", "description": "Finger exercises to support hand coordination.", "duration": 10 },
+      { "day": "Friday", "workout": "Chair yoga", "description": "Aids balance and body awareness.", "duration": 15 },
+      { "day": "Saturday", "workout": "Seated marching", "description": "Gentle leg movements for circulation.", "duration": 10 },
+      { "day": "Sunday", "workout": "Stretching from chair", "description": "Maintains mobility safely.", "duration": 15 }
+    ]
+  }
+]

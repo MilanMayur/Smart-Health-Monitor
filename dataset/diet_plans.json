@@ -1,0 +1,142 @@
+[
+  {
+    "day": "Monday",
+    "meal": {
+      "low_bmi": {
+        "breakfast": "Avocado toast with poached eggs",
+        "lunch": "Grilled chicken wrap with quinoa",
+        "dinner": "Salmon with sweet potatoes and green beans"
+      },
+      "normal_bmi": {
+        "breakfast": "Whole grain cereal with banana and milk",
+        "lunch": "Turkey sandwich with hummus and spinach",
+        "dinner": "Grilled tofu stir-fry with brown rice"
+      },
+      "high_bmi": {
+        "breakfast": "Greek yogurt with flaxseeds and berries",
+        "lunch": "Grilled salmon salad with olive oil dressing",
+        "dinner": "Steamed broccoli and tofu with brown rice"
+      }
+    }
+  },
+  {
+    "day": "Tuesday",
+    "meal": {
+      "low_bmi": {
+        "breakfast": "Banana pancakes with honey and walnuts",
+        "lunch": "Stuffed bell peppers with lean beef and rice",
+        "dinner": "Chicken curry with roti and cucumber salad"
+      },
+      "normal_bmi": {
+        "breakfast": "Oatmeal with almonds and fresh fruit",
+        "lunch": "Pasta primavera with grilled vegetables",
+        "dinner": "Paneer tikka with brown rice"
+      },
+      "high_bmi": {
+        "breakfast": "Oatmeal with chia seeds and apple slices",
+        "lunch": "Quinoa salad with chickpeas and greens",
+        "dinner": "Vegetable soup with lentils"
+      }
+    }
+  },
+  {
+    "day": "Wednesday",
+    "meal": {
+      "low_bmi": {
+        "breakfast": "Peanut butter toast with banana slices",
+        "lunch": "Chicken and avocado sandwich",
+        "dinner": "Grilled steak with mashed potatoes and veggies"
+      },
+      "normal_bmi": {
+        "breakfast": "Yogurt with mixed nuts and fruit",
+        "lunch": "Chickpea bowl with brown rice and vegetables",
+        "dinner": "Grilled fish with quinoa and salad"
+      },
+      "high_bmi": {
+        "breakfast": "Smoothie with spinach and almond milk",
+        "lunch": "Vegetable wrap with hummus",
+        "dinner": "Zucchini noodles with tomato basil sauce"
+      }
+    }
+  },
+  {
+    "day": "Thursday",
+    "meal": {
+      "low_bmi": {
+        "breakfast": "Scrambled eggs with whole wheat toast",
+        "lunch": "Grilled cheese sandwich and soup",
+        "dinner": "Roast chicken with brown rice and carrots"
+      },
+      "normal_bmi": {
+        "breakfast": "Multigrain toast with nut butter",
+        "lunch": "Egg salad sandwich with whole grain bread",
+        "dinner": "Veggie stir-fry with soba noodles"
+      },
+      "high_bmi": {
+        "breakfast": "Low-fat yogurt with sliced banana",
+        "lunch": "Tofu and veggie bowl with barley",
+        "dinner": "Steamed vegetables and grilled paneer"
+      }
+    }
+  },
+  {
+    "day": "Friday",
+    "meal": {
+      "low_bmi": {
+        "breakfast": "Granola with milk and honey",
+        "lunch": "Tuna wrap with lettuce and tomato",
+        "dinner": "Lamb curry with rice and salad"
+      },
+      "normal_bmi": {
+        "breakfast": "Oatmeal with nuts and raisins",
+        "lunch": "Grilled chicken Caesar wrap",
+        "dinner": "Stuffed zucchini boats with quinoa"
+      },
+      "high_bmi": {
+        "breakfast": "Smoothie with oats, spinach, and apple",
+        "lunch": "Lentil soup with whole grain bread",
+        "dinner": "Baked eggplant with brown rice"
+      }
+    }
+  },
+  {
+    "day": "Saturday",
+    "meal": {
+      "low_bmi": {
+        "breakfast": "Egg sandwich with avocado and tomato",
+        "lunch": "Chicken and rice burrito bowl",
+        "dinner": "Beef stir-fry with noodles and veggies"
+      },
+      "normal_bmi": {
+        "breakfast": "Fruit salad with cottage cheese",
+        "lunch": "Chickpea and sweet potato wrap",
+        "dinner": "Grilled fish tacos with slaw"
+      },
+      "high_bmi": {
+        "breakfast": "Overnight oats with almond milk and berries",
+        "lunch": "Grilled veggie wrap with tahini sauce",
+        "dinner": "Miso soup with tofu and steamed greens"
+      }
+    }
+  },
+  {
+    "day": "Sunday",
+    "meal": {
+      "low_bmi": {
+        "breakfast": "French toast with berries and syrup",
+        "lunch": "Chicken quesadilla with salsa and guac",
+        "dinner": "Shrimp pasta with creamy tomato sauce"
+      },
+      "normal_bmi": {
+        "breakfast": "Multigrain pancakes with honey",
+        "lunch": "Vegetable biryani with raita",
+        "dinner": "Stuffed bell peppers with couscous"
+      },
+      "high_bmi": {
+        "breakfast": "Green smoothie with flax and cucumber",
+        "lunch": "Baked tofu and kale bowl",
+        "dinner": "Cauliflower rice stir-fry with chickpeas"
+      }
+    }
+  }
+]

@@ -1,0 +1,158 @@
+[
+    {
+        "category": "bmi",
+        "tips": {
+            "low": {
+                "tip1": "Add smoothies with nut butter or full-fat dairy to boost calorie intake.",
+                "tip2": "Choose energy-dense snacks like trail mix or dried fruits.",
+                "tip3": "Use larger plates to encourage more food consumption.",
+                "tip4": "Increase protein to aid healthy weight gain.",
+                "tip5": "Schedule consistent meals and set reminders to eat."
+            },
+            "moderate": {
+                "tip1": "Incorporate a variety of food groups in each meal.",
+                "tip2": "Balance screen time with physical activity breaks.",
+                "tip3": "Limit late-night snacking.",
+                "tip4": "Replace sugary drinks with infused water or herbal teas.",
+                "tip5": "Do regular weigh-ins to notice trends early."
+            },
+            "high": {
+                "tip1": "Limit portion sizes and eat slowly to feel full sooner.",
+                "tip2": "Swap fried foods for grilled or baked alternatives.",
+                "tip3": "Avoid eating while distracted or in front of screens.",
+                "tip4": "Choose high-fiber foods to promote satiety.",
+                "tip5": "Work with a dietitian for a sustainable weight plan."
+            }
+        }
+    },
+    {
+        "category": "maxHeartRate",
+        "tips": {
+            "low": {
+                "tip1": "Practice interval training to boost cardiovascular efficiency.",
+                "tip2": "Aim for at least 150 minutes of moderate cardio per week.",
+                "tip3": "Use a heart rate monitor during workouts to track improvements.",
+                "tip4": "Walk briskly instead of casually.",
+                "tip5": "Try fun aerobic activities like dancing or cycling."
+            },
+            "moderate": {
+                "tip1": "Incorporate stretching to complement heart-focused exercises.",
+                "tip2": "Limit high-sugar drinks that may affect endurance.",
+                "tip3": "Follow a consistent sleep schedule to support heart health.",
+                "tip4": "Stay aware of signs of overexertion during exercise.",
+                "tip5": "Add strength training twice a week."
+            },
+            "high": {
+                "tip1": "Avoid intense workouts until resting heart rate stabilizes.",
+                "tip2": "Minimize digital screen exposure before bed for better recovery.",
+                "tip3": "Practice deep breathing or guided meditation.",
+                "tip4": "Avoid stimulants like energy drinks and nicotine.",
+                "tip5": "Document heart rate trends and review with your doctor."
+            }
+        }
+    },
+    {
+        "category": "bloodPressure",
+        "tips": {
+            "low": {
+                "tip1": "Eat salty snacks in moderation to elevate pressure naturally.",
+                "tip2": "Drink water before meals to improve circulation.",
+                "tip3": "Avoid alcohol, which can drop blood pressure further.",
+                "tip4": "Raise your legs during rest to encourage blood flow.",
+                "tip5": "Monitor dizziness or fainting and report it."
+            },
+            "moderate": {
+                "tip1": "Prepare meals at home to control salt and fat content.",
+                "tip2": "Eat calcium and magnesium-rich foods like leafy greens.",
+                "tip3": "Practice relaxation techniques such as deep breathing.",
+                "tip4": "Schedule regular blood pressure readings.",
+                "tip5": "Include walking breaks during long sedentary periods."
+            },
+            "high": {
+                "tip1": "Limit takeout or restaurant food known for high sodium.",
+                "tip2": "Use herbs and spices instead of salt when cooking.",
+                "tip3": "Opt for low-fat dairy and whole grains.",
+                "tip4": "Manage work and life stress with journaling or hobbies.",
+                "tip5": "Follow up with your physician about treatment options."
+            }
+        }
+    },
+    {
+        "category": "glucose",
+        "glucose": {
+            "low": {
+                "tip1": "Drink fruit juice or eat honey at the first sign of hypoglycemia.",
+                "tip2": "Always carry a snack if you're going out for long.",
+                "tip3": "Plan consistent meal timings throughout the day.",
+                "tip4": "Recheck sugar levels 15 minutes after a low episode.",
+                "tip5": "Have an emergency action plan with friends or coworkers."
+            },
+            "moderate": {
+                "tip1": "Choose whole grains like oats or brown rice over refined carbs.",
+                "tip2": "Add cinnamon or fenugreek to meals for natural sugar control.",
+                "tip3": "Avoid skipping breakfast as it can destabilize glucose levels.",
+                "tip4": "Keep a log of what you eat and corresponding glucose readings.",
+                "tip5": "Opt for snacks with a mix of carbs and protein."
+            },
+            "high": {
+                "tip1": "Limit fruit juices and high-GI fruits like watermelon.",
+                "tip2": "Choose legumes and lentils as staple carbohydrates.",
+                "tip3": "Cook with olive oil and avoid deep frying.",
+                "tip4": "Try a 10-minute walk after each meal to help digestion.",
+                "tip5": "Schedule a comprehensive diabetes screening soon."
+            }
+        }
+    },
+    {
+        "category": "insulin",
+        "insulin": {
+            "low": {
+                "tip1": "Start your day with a high-protein breakfast.",
+                "tip2": "Incorporate healthy starches like sweet potatoes.",
+                "tip3": "Avoid intermittent fasting without medical guidance.",
+                "tip4": "Try strength-building workouts to support hormonal health.",
+                "tip5": "Get tested for pancreatic function if persistently low."
+            },
+            "moderate": {
+                "tip1": "Use a food journal to detect insulin spikes or crashes.",
+                "tip2": "Cook from scratch to avoid hidden sugars and preservatives.",
+                "tip3": "Space out meals evenly to maintain stable energy.",
+                "tip4": "Incorporate fermented foods for gut-insulin link.",
+                "tip5": "Avoid stress eating or late-night binging."
+            },
+            "high": {
+                "tip1": "Plan carb intake based on physical activity for the day.",
+                "tip2": "Avoid snacking between meals unless necessary.",
+                "tip3": "Include chromium-rich foods like broccoli or whole grains.",
+                "tip4": "Avoid fruit juices, even natural ones, when insulin is high.",
+                "tip5": "Check your HOMA-IR score with your doctor."
+            }
+        }
+    },
+    {  
+        "category": "cholesterol",
+        "cholesterol": {
+            "low": {
+                "tip1": "Add chia seeds and whole eggs to your breakfast.",
+                "tip2": "Eat fatty fish like salmon twice a week.",
+                "tip3": "Do not eliminate all fats; focus on balance.",
+                "tip4": "Use coconut oil or butter in small amounts if needed.",
+                "tip5": "Watch for fatigue or mood changes from low cholesterol."
+            },
+            "moderate": {
+                "tip1": "Balance fiber intake with healthy fats like nuts or avocados.",
+                "tip2": "Avoid skipping meals to prevent cholesterol spikes.",
+                "tip3": "Bake or steam food instead of frying.",
+                "tip4": "Get your HDL/LDL ratio tested every 6 months.",
+                "tip5": "Stay hydrated and reduce trans fats gradually."
+            },
+            "high": {
+                "tip1": "Switch to oat-based breakfasts for cholesterol control.",
+                "tip2": "Avoid coconut milk, butter, and palm oils.",
+                "tip3": "Check nutrition labels for hidden saturated fats.",
+                "tip4": "Incorporate daily brisk walking or light jogging.",
+                "tip5": "Take prescribed statins only under physician supervision."
+            }
+        }
+    }
+]
