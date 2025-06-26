@@ -6,7 +6,8 @@ import { Request, Response } from 'express';
 import { SessionAuthGuard } from '../auth/session-auth.guard';
 import { MetricsService } from './metrics.service';
 //import fetch from 'node-fetch';
-const fetch = (...args) => import('node-fetch').then(mod => mod.default(...args));
+const fetch = (...args: Parameters<typeof import('node-fetch')>) =>
+  import('node-fetch').then(mod => mod.default(...args));
 
 @Controller('metric') 
 @UseGuards(SessionAuthGuard)
