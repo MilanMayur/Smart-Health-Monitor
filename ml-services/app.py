@@ -5,7 +5,7 @@ import pandas as pd
 import joblib
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True, origins=["http://localhost:3000"])
+CORS(app, supports_credentials=True, origins=["http://localhost:3000"]) #"https://your-app-name.onrender.com"
 
 # Load all models
 diabetes_model = joblib.load('model/diabetes_model.pkl')
