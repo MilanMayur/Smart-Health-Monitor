@@ -24,7 +24,7 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const res = await fetch('http://localhost:3001/auth/check', { //http://ec-2-ip:3001/auth/check
+                const res = await fetch('http://13.201.82.56:3001/auth/check', { //'http://localhost:3001/auth/check', or //http://ec-2-ip:3001/auth/check
                     credentials: 'include',
                 });
                 if (!res.ok) throw new Error('Not authenticated');
