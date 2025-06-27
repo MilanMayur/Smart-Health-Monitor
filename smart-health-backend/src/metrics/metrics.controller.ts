@@ -11,9 +11,9 @@ import fetch from 'node-fetch';
 @UseGuards(SessionAuthGuard)
 export class MetricsController {
     private flaskUrls: Record<string, string> = {
-        diabetes: 'http://13.201.82.56:5000/predict-diabetes',
-        heart: 'http://13.201.82.56:5000/predict-heart',
-        stroke: 'http://13.201.82.56:5000/predict-stroke',
+        diabetes: 'http://localhost:5000/predict-diabetes',
+        heart: 'http://localhost:5000/predict-heart',
+        stroke: 'http://localhost:5000/predict-stroke',
     };
 
     constructor(private readonly metricsService: MetricsService) {}
