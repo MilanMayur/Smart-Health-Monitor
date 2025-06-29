@@ -6,7 +6,7 @@ A full-stack health monitoring platform that enables users to track vital health
 - **Backend:** NestJS, Express, MongoDB, Passport (Session-based Auth)
 - **ML Services:** Python, Flask, Scikit-learn
 - **Database:** MongoDB Atlas
-- **Deployment:** AWS EC2 (Ubuntu), Nginx (optional)
+- **Deployment:** AWS EC2 (Ubuntu)
 
 ## Images
 ![Screenshot (70)1](https://github.com/user-attachments/assets/f39428ba-9ef6-42fc-a5b7-8ec82afb82df)
