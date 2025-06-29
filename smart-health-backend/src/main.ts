@@ -25,7 +25,7 @@ async function bootstrap() {
                 httpOnly: true,
                 secure: false, //true,  REQUIRED for HTTPS + cross-origin
                 maxAge: 1000 * 60 * 60 * 24, // 1 day
-                //sameSite: 'none', REQUIRED for cross-origin
+                sameSite: 'lax', //'none', REQUIRED for cross-origin
             },
             store: MongoStore.create({
                 mongoUrl: process.env.MONGODB_URI, 
@@ -55,7 +55,7 @@ async function bootstrap() {
   });*/
 
     app.enableCors({
-        origin: '*', // "https://your-frontend-domain.com" or "http://localhost:3000"
+        origin: ['http://<ec2-ip>:3000'], // "https://your-frontend-domain.com" or "http://localhost:3000"
         credentials: true,
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     });
