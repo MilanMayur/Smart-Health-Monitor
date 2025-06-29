@@ -36,7 +36,7 @@ export class AuthController {
     async login(@Body() dto: LoginDto, 
                 @Req() req: Request & { user?: any }, 
                 @Res({ passthrough: true }) res: Response) {
-        const user = await this.authService.login(dto);
+        //const user = await this.authService.login(dto);
         const safeUser = sanitizeUser(user); 
         req.session.user = safeUser;
         return { 
@@ -69,17 +69,17 @@ export class AuthController {
     }
 
     @Get('check')
-    check(@Req() req: Request, @Res() res: Response) {
+    check(@Req() req: Request) {
         const sessionUser = req.session?.user;
         if (sessionUser) {
             const safeUser = sanitizeUser(sessionUser);
-            return res.json({ 
+            return { 
                 authenticated: true, 
-                user: JSON.parse(JSON.stringify(safeUser)) 
-            });
+                user: safeUser
+            };
         } 
         else {
-            return res.status(401).json({ authenticated: false });
+            throw new UnauthorizedException({ authenticated: false });
         }
     }
 
