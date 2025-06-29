@@ -55,7 +55,7 @@ async function bootstrap() {
   });*/
 
     app.enableCors({
-        origin: ['http://<ec2-ip>:3000'], // "https://your-frontend-domain.com" or "http://localhost:3000"
+        origin: ['http://<ec2-ip>:3000'], // "http://localhost:3000"
         credentials: true,
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     });
