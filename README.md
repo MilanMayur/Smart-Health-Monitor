@@ -8,6 +8,7 @@ A full-stack health monitoring platform that enables users to track vital health
 - **Database:** MongoDB Atlas
 - **Deployment:** AWS EC2 (Ubuntu), Nginx (optional)
 
+## Images
 ![Screenshot (70)1](https://github.com/user-attachments/assets/f39428ba-9ef6-42fc-a5b7-8ec82afb82df)
 ![Screenshot (71)1](https://github.com/user-attachments/assets/68fd8f7e-ae53-4fa1-ad54-67d90335e23a)
 ![Screenshot (72)1](https://github.com/user-attachments/assets/d89d9ab2-e284-456d-8e7a-94b504862cce)
