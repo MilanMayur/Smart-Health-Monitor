@@ -56,7 +56,8 @@ smart-health-monitor/
     cd ml-services
     python -m venv venv
     source venv/bin/activate  # On Windows: venv\Scripts\activate
-    pip install -r requirements.txt
+
+#   Install requirements
 
 #   Start Flask Server
     python app.py
@@ -67,13 +68,16 @@ You can deploy all services on AWS EC2:
 
 ## Authentication
 - Session-based authentication using express-session and passport
-- Sessions stored in MongoDB
+- Sessions are stored in MongoDB
 - Secure cookie handling with credentials: include
 
 ## Features
 - ✅ User Login & Registration
-- 💡 Personalized Predictions (Diabetes, Heart, Stroke)
+- 💡 Personalised Predictions (Diabetes, Heart, Stroke)
 - 📊 Dashboard & Health Metrics
-- 📝 Health Tips (based on ML output)
+- 💡 Dynamic Health Insights (based on ML output)
+- 💡 Personalised Diet & Workout Plans
 - 🔒 Secure Auth + Session Persistence
-
+- 🛠️ Update Health Metrics (e.g., glucose, cholesterol, BMI)
+- 🔄 Change Password
+- ❌ Delete Account
