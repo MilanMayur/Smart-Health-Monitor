@@ -13,7 +13,7 @@ import { Metric, MetricSchema } from './metrics.schema';
     ],
     controllers: [MetricsController],
     providers: [MetricsService],
-    exports: [MetricsService]
+    exports: [MetricsService, MongooseModule]
 })
 
 export class MetricsModule {}
