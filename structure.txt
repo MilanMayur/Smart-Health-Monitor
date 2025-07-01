@@ -36,6 +36,8 @@
 │   ├── dashboard/
 │   │   ├── layout.tsx                → Sidebar layout
 │   │   ├── page.tsx                  → Overview page
+│   │   ├── ai-chat/
+│   │   │   ├── page.tsx              → AI Assistant page
 │   │   ├── fitness/
 │   │   │   ├── page.tsx              → Fitness page
 │   │   ├── nutrition/
@@ -106,7 +108,10 @@
 │   │   ├── tips.controller.ts          
 │   │   ├── tips.module.ts              
 │   │   ├── tips.service.ts             
-│   │   ├── tips.schema.ts              
+│   │   ├── tips.schema.ts    
+│   ├── ai/ 
+│   │   ├── ai.controller.ts          
+│   │   ├── ai.module.ts 
 
 
 
