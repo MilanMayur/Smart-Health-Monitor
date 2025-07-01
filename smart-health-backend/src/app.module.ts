@@ -8,6 +8,7 @@ import { MetricsModule } from './metrics/metrics.module';
 import { NutritionModule } from './nutrition/nutrition.module';
 import { FitnessModule } from './fitness/fitness.module';
 import { TipsModule } from './tips/tips.module';
+import { AiModule } from './ai/ai.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ServeStaticModule } from '@nestjs/serve-static';
@@ -29,7 +30,8 @@ dotenv.config();
         MetricsModule,
         NutritionModule,
         FitnessModule,
-        TipsModule
+        TipsModule,
+        AiModule
     ],
     controllers: [AppController],
     providers: [AppService],
