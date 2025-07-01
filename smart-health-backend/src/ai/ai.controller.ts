@@ -72,7 +72,7 @@ export class AiController {
                     headers: {
                         Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
                         'Content-Type': 'application/json',
-                        'HTTP-Referer': 'http://localhost:3000',
+                        'HTTP-Referer': 'http://<ec2-ip>:3000', //localhost:3000
                         'X-Title': 'Smart Health Monitor Chatbot',
                     },
                 }
