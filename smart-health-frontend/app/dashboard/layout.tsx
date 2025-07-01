@@ -70,40 +70,19 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                         {children}
                     </main>
                 </div>
+
+                {/* Footer AI Chat*/}
+                <footer className="pb-1 text-center text-white text-sm opacity-80">
+                    <button onClick={() => router.push('/dashboard/ai-chat')}
+                        className="fixed bottom-6 right-6 bg-blue-600 text-white w-14 h-14
+                            rounded-full shadow-lg hover:bg-blue-800 transition-all 
+                            hover:scale-105 cursor-pointer"
+                    >
+                        Chat AI
+                    </button> 
+                </footer>
             </div>
         </div>
     );
 }
 
-/*
-<Link 
-                                    href="/dashboard" 
-                                    className="block py-2 hover:bg-gray-700">
-                                    <p className="font-bold shadowm">Overview</p>
-                                </Link>
-                                <Link 
-                                    href="/dashboard/health" 
-                                    className="block py-2 hover:bg-gray-700">
-                                    <p className="font-bold shadowm">Health Prediction</p>
-                                </Link>
-                                <Link 
-                                    href="/dashboard/nutrition" 
-                                    className="block py-2 hover:bg-gray-700">
-                                    <p className="font-bold shadowm">Diet & Nutrition</p>
-                                </Link>
-                                <Link 
-                                    href="/dashboard/fitness" 
-                                    className="block py-2 hover:bg-gray-700">
-                                    <p className="font-bold shadowm">Fitness Planner</p>
-                                </Link>
-                                <Link 
-                                    href="/dashboard/insights" 
-                                    className="block py-2 hover:bg-gray-700">
-                                    <p className="font-bold shadowm">Health Insights</p>
-                                </Link>
-                                <Link 
-                                    href="/dashboard/profile" 
-                                    className="block py-2 hover:bg-gray-700">
-                                    <p className="font-bold shadowm">Profile</p>
-                                </Link>
-*/
