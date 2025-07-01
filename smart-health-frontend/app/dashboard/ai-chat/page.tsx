@@ -16,7 +16,7 @@ export default function AiChatPage() {
         setLoading(true);
 
         try {
-            const res = await fetch('http://localhost:3001/ai/chat', {
+            const res = await fetch('http://<ec2-ip>:3001/ai/chat', { //localhost:3001
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 credentials: 'include',
