@@ -12,8 +12,8 @@ A full-stack health monitoring platform that enables users to track vital health
 ## Images
 ![Screenshot (70)1](https://github.com/user-attachments/assets/f39428ba-9ef6-42fc-a5b7-8ec82afb82df)
 ![Screenshot (71)1](https://github.com/user-attachments/assets/68fd8f7e-ae53-4fa1-ad54-67d90335e23a)
-![Screenshot (72)1](https://github.com/user-attachments/assets/d89d9ab2-e284-456d-8e7a-94b504862cce)
-![Screenshot (73)1](https://github.com/user-attachments/assets/4d9bb48e-10f3-410a-896e-d50e81cb39a4)
+![Screenshot (78)](https://github.com/user-attachments/assets/dd6e72a7-6c41-4fe4-b84d-a6d3da54257f)
+![Screenshot (77)](https://github.com/user-attachments/assets/076fb786-f4aa-4869-aed2-bd06a0faa526)
 ![Screenshot (74)1](https://github.com/user-attachments/assets/2b795682-6e03-411f-9e7e-4ce9569a67f2)
 ![Screenshot (75)](https://github.com/user-attachments/assets/0b8c0cc8-c0ec-41c5-86c2-18b0c9d308d4)
 
