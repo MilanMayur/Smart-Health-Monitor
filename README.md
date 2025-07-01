@@ -5,6 +5,7 @@ A full-stack health monitoring platform that enables users to track vital health
 - **Frontend:** Next.js, Tailwind CSS
 - **Backend:** NestJS, Express, MongoDB, Passport (Session-based Auth)
 - **ML Services:** Python, Flask, Scikit-learn
+- **AI Services:** OpenRouter
 - **Database:** MongoDB Atlas
 - **Deployment:** AWS EC2 (Ubuntu)
 
@@ -14,6 +15,7 @@ A full-stack health monitoring platform that enables users to track vital health
 ![Screenshot (72)1](https://github.com/user-attachments/assets/d89d9ab2-e284-456d-8e7a-94b504862cce)
 ![Screenshot (73)1](https://github.com/user-attachments/assets/4d9bb48e-10f3-410a-896e-d50e81cb39a4)
 ![Screenshot (74)1](https://github.com/user-attachments/assets/2b795682-6e03-411f-9e7e-4ce9569a67f2)
+![Screenshot (75)](https://github.com/user-attachments/assets/0b8c0cc8-c0ec-41c5-86c2-18b0c9d308d4)
 
 
 ## 📁 Folder Structure
@@ -38,6 +40,7 @@ smart-health-monitor/
     PORT=3001
     SESSION_SECRET=yourStrongSecret
     MONGODB_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/health_db
+    OPENROUTER_API_KEY=your_openrouter_api_key
 
 #   Start the Server
     npm run start:dev
@@ -76,6 +79,7 @@ You can deploy all services on AWS EC2:
 - 💡 Personalised Predictions (Diabetes, Heart, Stroke)
 - 📊 Dashboard & Health Metrics
 - 💡 Dynamic Health Insights (based on ML output)
+- ✅ AI Chatbot
 - 💡 Personalised Diet & Workout Plans
 - 🔒 Secure Auth + Session Persistence
 - 🛠️ Update Health Metrics (e.g., glucose, cholesterol, BMI)
