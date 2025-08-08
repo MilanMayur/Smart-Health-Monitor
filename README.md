@@ -18,7 +18,15 @@ The app is built using **Tkinter** for the frontend, **Flask** for backend ML se
   - Stroke
 
 ## Images
-coming soon...
+<img width="999" height="829" alt="Screenshot (82)" src="https://github.com/user-attachments/assets/53fa6499-8f61-4b75-863e-8a307452f114" />
+<img width="997" height="829" alt="Screenshot (85)" src="https://github.com/user-attachments/assets/1c53b5f0-9489-489f-8767-7109e49b5824" />
+<img width="994" height="831" alt="Screenshot (86)" src="https://github.com/user-attachments/assets/5156e408-a797-47b4-862d-656533ff2c90" />
+<img width="1001" height="833" alt="Screenshot (87)" src="https://github.com/user-attachments/assets/696831b5-a8c7-4af6-bd53-3ca1836f4d5c" />
+<img width="997" height="829" alt="Screenshot (91)" src="https://github.com/user-attachments/assets/4c336a5d-7b12-4f74-afc3-d0172c1c4c4a" />
+<img width="1000" height="831" alt="Screenshot (90)" src="https://github.com/user-attachments/assets/a65b6838-a19a-441f-a1a4-b82cea98cbaf" />
+
+
+
 
 
 ## Setup Instructions
