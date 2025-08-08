@@ -1,0 +1,38 @@
+smart_health_monitor/
+├── app.py                 # Entry point - loads root/intro
+├── .env                   # .env file
+├── session.py             # Create session on login
+├── session.json           # Stores session
+├── views/
+│   ├── intro.py           # Two intro pages
+│   ├── login.py
+│   ├── register.py
+│   ├── dashboard.py       # Main layout (navbar + sidebar + content)
+│   ├── pages/
+│   │   ├── predict
+│   │   │   │──predict.py
+│   │   │   │──predict_diabetes.py
+│   │   │   │──predict_heart.py
+│   │   │   └──predict_stroke.py
+│   │   ├── profile
+│   │   │   │──profile.py
+│   │   │   │──update_details.py
+│   │   │   └──change_password.py
+│   │   ├── fitness.py
+│   │   ├── diet.py
+│   │   ├── chatbot.py
+│   │   └── insights.py
+├── utils/
+│   ├── ui.py              # cards, charts, layout builders
+│   ├── db.py              # MongoDB functions
+│   └── auth.py            # Handles register/login
+├── ml-services/
+│   ├── charts/                            → Charts created during training
+│   ├── model/
+│   │   ├── diabetes_model.pkl             → Diabetes model
+│   │   ├── heart_model.pkl                → Heart model
+│   │   └── stroke_model.pkl               → Stroke model
+│   ├── app.py                             → Python Flask 
+│   ├── diabetes_model.py                  → Diabetes model train
+│   ├── heart_model.py                     → Heart model train
+│   └── stroke_model.py                    → Stroke model train
