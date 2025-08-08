@@ -1,20 +1,21 @@
 smart_health_monitor/
+├── assets                 # Contains backgrounds, logos
 ├── app.py                 # Entry point - loads root/intro
 ├── .env                   # .env file
 ├── session.py             # Create session on login
 ├── session.json           # Stores session
 ├── views/
-│   ├── intro.py           # Two intro pages
+│   ├── intro.py           # Intro page
 │   ├── login.py
 │   ├── register.py
 │   ├── dashboard.py       # Main layout (navbar + sidebar + content)
 │   ├── pages/
 │   │   ├── predict
-│   │   │   │──predict.py
+│   │   │   │──predict.py                  # Predict home page
 │   │   │   │──predict_diabetes.py
 │   │   │   │──predict_heart.py
 │   │   │   └──predict_stroke.py
-│   │   ├── profile
+│   │   ├── profile                        # Profile home page
 │   │   │   │──profile.py
 │   │   │   │──update_details.py
 │   │   │   └──change_password.py
@@ -27,12 +28,13 @@ smart_health_monitor/
 │   ├── db.py              # MongoDB functions
 │   └── auth.py            # Handles register/login
 ├── ml-services/
-│   ├── charts/                            → Charts created during training
+│   ├── charts/                            # Charts created during training
 │   ├── model/
-│   │   ├── diabetes_model.pkl             → Diabetes model
-│   │   ├── heart_model.pkl                → Heart model
-│   │   └── stroke_model.pkl               → Stroke model
-│   ├── app.py                             → Python Flask 
-│   ├── diabetes_model.py                  → Diabetes model train
-│   ├── heart_model.py                     → Heart model train
-│   └── stroke_model.py                    → Stroke model train
+│   │   ├── diabetes_model.pkl             # Diabetes model
+│   │   ├── heart_model.pkl                # Heart model
+│   │   └── stroke_model.pkl               # Stroke model
+│   ├── app.py                             # Python Flask 
+│   ├── diabetes_model.py                  # Diabetes model train
+│   ├── heart_model.py                     # Heart model train
+│   └── stroke_model.py                    # Stroke model train
+
