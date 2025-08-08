@@ -1,0 +1,22 @@
+# Core GUI
+tk
+Pillow
+
+# Backend & API
+Flask
+Flask-Cors
+python-dotenv
+requests
+
+# Database
+pymongo
+bson
+bcrypt
+
+# Machine Learning & Data Science
+numpy
+pandas
+scikit-learn
+xgboost
+imbalanced-learn
+joblib
