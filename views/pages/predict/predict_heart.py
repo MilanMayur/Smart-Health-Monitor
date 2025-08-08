@@ -7,7 +7,6 @@ from utils.ui import AppButton, BackButton, clear_window
 from utils.db import save_metrics
 
 def heart_prediction(user_id, frame):
-    print("Opening heart page") #debug
     clear_window(frame)
     frame.configure(bg="#f8fafc")
 
@@ -185,6 +184,7 @@ def heart_prediction(user_id, frame):
 
     AppButton(form_frame, "Predict", lambda: predict(user_id))\
             .grid(row=len(fields)+1, column=0, columnspan=2, pady=20)
+
 
 
     
