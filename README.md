@@ -20,6 +20,18 @@ It helps users track health metrics, receive AI-based disease risk predictions, 
 
 ---
 
+<img width="1915" height="1030" alt="Screenshot (96)" src="https://github.com/user-attachments/assets/f2f82a25-58a9-41c0-ba84-bee4b776a41d" />
+<img width="1913" height="1031" alt="Screenshot (97)" src="https://github.com/user-attachments/assets/9ea5151e-b78c-4cf6-9bc9-ac9ecc22b777" />
+<img width="1918" height="1034" alt="Screenshot (98)" src="https://github.com/user-attachments/assets/35d42dff-013c-4395-ac5c-b36305613220" />
+<img width="1920" height="1034" alt="Screenshot (99)" src="https://github.com/user-attachments/assets/ef924925-6055-486d-b281-1e317d359cb8" />
+<img width="1921" height="1031" alt="Screenshot (100)" src="https://github.com/user-attachments/assets/4487c0da-c463-4733-ad21-fcc3f048bff8" />
+<img width="1921" height="1031" alt="Screenshot (101)" src="https://github.com/user-attachments/assets/1577f597-2274-4ea6-b9c3-9f1455dc4816" />
+<img width="1916" height="1038" alt="Screenshot (102)" src="https://github.com/user-attachments/assets/7025ef1b-d511-41f6-8a11-d78184a7ec1d" />
+<img width="1918" height="1034" alt="Screenshot (103)" src="https://github.com/user-attachments/assets/1fa7e8dc-587e-413e-8b39-f9eae7ac9db7" />
+<img width="1918" height="1034" alt="Screenshot (104)" src="https://github.com/user-attachments/assets/57bd6b11-0e56-462f-93bc-d74b3c3eec70" />
+<img width="1921" height="1038" alt="Screenshot (106)" src="https://github.com/user-attachments/assets/060dacf3-a4f0-4cbc-8719-d4cacc5ac1ca" />
+<img width="1919" height="1038" alt="Screenshot (107)" src="https://github.com/user-attachments/assets/c5ca60ab-fd76-4844-8832-4de7fd72fab3" />
+
 ## 📂 Project Structure
 
 ```
