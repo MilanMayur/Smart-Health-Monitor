@@ -92,27 +92,60 @@ Smart-Health-Monitor
     - SVM
     - XGBoost
 
-## ⚙️ Setup & Installation
+## ⚙️ Setup & Installation Using EC2
 
-1️⃣ Clone Repository
+1. Update System
+```
+sudo apt update && sudo apt upgrade -y
+```
+
+2. Clone Repository
 ```
 git clone https://github.com/your-username/Smart-Health-Monitor.git
 cd Smart-Health-Monitor
 ```
-2️⃣ Backend Setup (Go + Gorilla/Mux)
+
+3. Install Required Packages
 ```
-cd cmd/server
-go run main.go
+sudo apt install python3 python3-pip python3-venv git golang-go -y
 ```
-3️⃣ ML Services Setup (Python + Flask)
+
+4. Set Up Flask ML Service
 ```
 cd ml-services
+
+# Create and activate virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+# Upgrade pip and install requirements
+pip install --upgrade pip
 pip install -r requirements.txt
-python app.py
+
+# Run Flask server
+export FLASK_APP=app.py
+export FLASK_ENV=production
+flask run --host=0.0.0.0 --port=5000
 ```
-4️⃣ Access Web App
+
+5. Set Up Go Server
 ```
-Open browser → http://localhost:8080
+cd ~/Smart-Health-Monitor
+
+# Create .env File and add following variables:
+nano .env
+
+# MONGO_URI=<your MongoDB URI>
+# MONGO_DB=<your database name>
+# SESSION_SECRET=<your_session_secret_here>
+# PORT=3001
+# OPENROUTER_API_KEY=<your OpenRouter API key>
+# FLASK_URL=http://<EC2_PRIVATE_IP>:5000
+
+# Run Go Server
+go run cmd/server/main.go
+
+# Accessible at "http://<EC2_PUBLIC_IP>:3001"
 ```
 
 ## 👨‍💻 Author
