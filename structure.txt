@@ -1,128 +1,138 @@
-/smart-health-monitor
-├── smart-health-frontend/         (React/Next.js)
-├── smart-health-backend/          (NestJS)
-├── ml-services/                   (Python model, Flask)
-
-
-/smart-health-frontend/
-├── package.json                      
-├── tailwind.config.ts                
-├── tsconfig.json                     
-├── public/
-│   ├── root_background.jpg           → Home background
-│   ├── root_background_1.jpg         → Home background (after scroll)
-│   ├── dashboard_background.jpg      → Dashboard background
-│   ├── logo.png                      → App Logo
-│   ├── user_male.png                 → Male icon
-│   ├── user_female.png               → Female icon
-├── utils/
-│   ├── tipCardConfig.ts              → Tips card setup
-├── lib/
-│   ├── api.ts                        → API setup
-│   ├── useAuth.ts                    → Auth setup
-├── app/                      
-│   ├── page.tsx                      → Home page
-│   ├── layout.tsx                    → Home layout
-│   ├── components/
-│   │   ├── logoutButton.tsx          → Logout button
-│   │   ├── backButton.tsx            → Back button
-│   │   ├── button.tsx                → Buttons
-│   │   ├── insightCard.tsx           → Insight Card
-│   │   ├── authProvider.tsx          → Auth Provider
-│   ├── login/
-│   │   ├── page.tsx                  → Login page
-│   ├── register/
-│   │   ├── page.tsx                  → Register page
-│   ├── dashboard/
-│   │   ├── layout.tsx                → Sidebar layout
-│   │   ├── page.tsx                  → Overview page
-│   │   ├── ai-chat/
-│   │   │   ├── page.tsx              → AI Assistant page
-│   │   ├── fitness/
-│   │   │   ├── page.tsx              → Fitness page
-│   │   ├── nutrition/
-│   │   │   ├── page.tsx              → Nutrition & Diet page
-│   │   ├── insights/
-│   │   │   ├── page.tsx              → Insights page
-│   │   ├── profile/
-│   │   │   ├── page.tsx              → Profile page
-│   │   │   ├── change-password/
-│   │   │   │   ├── page.tsx          → Change password page
-│   │   │   ├── update-details/
-│   │   │   │   ├── page.tsx          → Update details page
-│   │   ├── health/
-│   │   │   ├── diabetes/
-│   │   │   │   ├── page.tsx          → Diabetes predict page
-│   │   │   ├── heart/
-│   │   │   │   ├── page.tsx          → Heart predict page
-│   │   │   ├── stroke/
-│   │   │   │   ├── page.tsx          → Stroke predict page
-
-
-
-/smart-health-backend/
-├── .env                              → Environmental variables
-├── middleware.ts                      
-├── package.json                       
-├── src/
-│   ├── app.controller.ts              
-│   ├── app.module.ts                  
-│   ├── app.service.ts                 
-│   ├── main.ts                        
-│   ├── types/
-│   │   ├── express.d.ts               
-│   │   ├── next-auth.d.ts             
-│   ├── auth/ 
-│   │   ├── dto/                       
-│   │   │   ├── change-password.dto.ts 
-│   │   │   ├── login.dto.ts           
-│   │   │   ├── register.dto.ts        
-│   │   ├── auth.controller.ts         
-│   │   ├── auth.module.ts             
-│   │   ├── auth.service.ts            
-│   │   ├── local.strategy.ts          
-│   │   ├── session-auth.guard.        
-│   ├── metrics/
-│   │   ├── dto/
-│   │   │   ├── metrics.dto.ts         
-│   │   ├── metrics.controller.ts      
-│   │   ├── metrics.module.ts          
-│   │   ├── metrics.service.ts         
-│   │   ├── metrics.schema.ts          
-│   ├── users/ 
-│   │   ├── users.controller.ts        
-│   │   ├── users.module.ts            
-│   │   ├── users.service.ts           
-│   │   ├── users.schema.ts            
-│   ├── fitness/ 
-│   │   ├── fitness.controller.ts       
-│   │   ├── fitness.module.ts           
-│   │   ├── fitness.service.ts          
-│   │   ├── fitness.schema.ts           
-│   ├── nutrition/ 
-│   │   ├── nutrition.controller.ts     
-│   │   ├── nutrition.module.ts         
-│   │   ├── nutrition.service.ts        
-│   │   ├── nutrition.schema.ts         
-│   ├── tips/ 
-│   │   ├── tips.controller.ts          
-│   │   ├── tips.module.ts              
-│   │   ├── tips.service.ts             
-│   │   ├── tips.schema.ts    
-│   ├── ai/ 
-│   │   ├── ai.controller.ts          
-│   │   ├── ai.module.ts 
-
-
-
-/ml-services/
-├── charts/                            → Charts created during training
-├── model/
-│   ├── diabetes_model.pkl             → Diabetes model
-│   ├── heart_model.pkl                → Heart model
-│   ├── stroke_model.pkl               → Stroke model
-├── app.py                             → Python Flask 
-├── diabetes_model.py                  → Diabetes model train
-├── heart_model.py                     → Heart model train
-├── stroke_model.py                    → Stroke model train
-
+Smart-Health-Monitor
+│   .env
+│   go.mod
+│   go.sum
+│   structure.txt
+│
+├───cmd
+│   └───server
+│           main.go
+│
+├───config
+│       config.go
+│
+├───internal
+│   ├───auth
+│   │       context.go
+│   │       handler.go
+│   │       middleware.go
+│   │       model.go
+│   │       service.go
+│   │       session.go
+│   │
+│   ├───chatbot
+│   │       handler.go
+│   │       model.go
+│   │       service.go
+│   │
+│   ├───fitness
+│   │       handler.go
+│   │       model.go
+│   │       service.go
+│   │
+│   ├───health
+│   │       handler.go
+│   │       model.go
+│   │
+│   ├───metrics
+│   │       handler.go
+│   │       model.go
+│   │       service.go
+│   │
+│   ├───middleware
+│   │       cors.go
+│   │       logging.go
+│   │       render.go
+│   │
+│   ├───nutrition
+│   │       handler.go
+│   │       model.go
+│   │       service.go
+│   │
+│   ├───pages
+│   │       handler.go
+│   │       model.go
+│   │
+│   ├───tips
+│   │       handler.go
+│   │       model.go
+│   │       service.go
+│   │
+│   └───users
+│           handler.go
+│           model.go
+│           service.go
+│
+├───ml-services
+│   │   app.py
+│   │   diabetes_model.py
+│   │   diabetes_predict.py
+│   │   heart_model.py
+│   │   heart_predict.py
+│   │   stroke_model.py
+│   │   stroke_predict.py
+│   │
+│   ├───charts
+│   │       confusion_matrix_Logistic_Regression.png
+│   │       confusion_matrix_Random_Forest.png
+│   │       confusion_matrix_SVM.png
+│   │       confusion_matrix_XGBoost.png
+│   │       diabetes_cfn_matrix.png
+│   │       diabetes_histogram.png
+│   │       insulin_histogram.png
+│   │       probability_histogram_Logistic_Regression.png
+│   │       probability_histogram_Random_Forest.png
+│   │       probability_histogram_SVM.png
+│   │       probability_histogram_XGBoost.png
+│   │       roc_curve_Logistic_Regression.png
+│   │       roc_curve_Random_Forest.png
+│   │       roc_curve_SVM.png
+│   │       roc_curve_XGBoost.png
+│   │
+│   └───model
+│           diabetes_ensemble.pkl
+│           diabetes_model.pkl
+│           heart_model.pkl
+│           stroke_model.pkl
+│
+├───static
+│       background1.png
+│       dashboard_background.jpg
+│       file.svg
+│       globe.svg
+│       logo.png
+│       next.svg
+│       root_background.jpg
+│       root_background1.jpg
+│       user_female.png
+│       user_icon.png
+│       user_male.png
+│       vercel.svg
+│       window.svg
+│
+└───web
+    ├───components
+    │       footer.html
+    │
+    ├───layouts
+    │       base.html
+    │       private.html
+    │       public.html
+    │
+    └───pages
+            change_password.html
+            chatbot.html
+            dashboard.html
+            diabetes.html
+            fitness.html
+            health.html
+            heart.html
+            home.html
+            insights.html
+            login.html
+            nutrition.html
+            profile.html
+            register.html
+            stroke.html
+            update_metrics.html
+            update_profile.html
