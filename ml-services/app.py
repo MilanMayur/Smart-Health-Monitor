@@ -70,7 +70,7 @@ def predict_diabetes():
             'riskCategory': category
         })
     except Exception as e:
-        return jsonify({'error': str(e)}), 500 #400
+        return jsonify({'error': str(e)}), 500
 
 @app.route('/predict-heart', methods=['POST'])
 def predict_heart():
@@ -112,7 +112,7 @@ def predict_heart():
             'riskCategory': category
         })
     except Exception as e:
-        return jsonify({'error': str(e)}), 500 #400
+        return jsonify({'error': str(e)}), 500
 
 @app.route('/predict-stroke', methods=['POST'])
 def predict_stroke():
@@ -150,8 +150,10 @@ def predict_stroke():
             'riskCategory': risk
         })
     except Exception as e:
-        return jsonify({'error': str(e)}), 400
+        return jsonify({'error': str(e)}), 500
+
 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
