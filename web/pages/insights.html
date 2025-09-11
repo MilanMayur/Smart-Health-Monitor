@@ -1,0 +1,63 @@
+<!-- web/pages/insights.html -->
+{{define "content"}}
+<div class="space-y-6 mx-auto max-w-4xl">
+    <h1 class="text-3xl font-bold mb-4 text-center">Health Insights</h1>
+
+    {{if .Loading}}
+        <div class="p-6 text-center text-gray-600">Loading...</div>
+    {{else if .NoPlan}}
+        <!-- No Plan Available -->
+        <div class="text-center bg-yellow-100 border border-yellow-300 text-yellow-700 p-4 rounded 
+                    mb-4 bg-gradient-to-br from-white to-blue-100 opacity-90">
+            <h2 class="text-lg font-semibold text-red-600 mb-2">No Health Insights Available</h2>
+            <p>
+                Please complete your health prediction to receive insights.
+            </p>
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="/health" class="px-4 py-2 bg-blue-600 text-white rounded shadow-lg 
+                    hover:bg-blue-700">
+                    Take your First Prediction
+                </a>
+            </div>
+        </div>
+    {{else}}
+        <!-- Health Summary -->
+        <section class="bg-white p-4 rounded shadow text-center mb-6">
+            <h2 class="text-xl font-semibold mb-2">Health Summary</h2>
+            <p class="mb-2">
+                Based on your recent inputs, your average health risk is: <span class="font-bold">{{.AvgRisk}}%</span>
+            </p>
+            <p class="text-gray-700">Track blood pressure, glucose, and cholesterol weekly. Start using your Fitness and Diet Planner.</p>
+        </section>
+
+        <!-- Insight Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+            {{range .Insights}}
+            <div class="bg-gradient-to-br from-white {{.GradientClass}} border-2 p-4 
+                        rounded-lg shadow {{.ColorClass}}">
+                <h3 class="font-semibold mb-1">{{.Label}}</h3>
+                <p class="text-2xl font-bold mb-1">
+                    {{if ne .Value "N/A"}}{{.Value}}{{if .Unit}} {{.Unit}}{{end}}{{else}}N/A{{end}}
+                </p>
+                <span class="text-sm block mb-2">{{.LevelLabel}}</span>
+                <ul class="text-sm list-disc list-inside">
+                    {{range .Tips}}
+                    <li>{{.}}</li>
+                    {{end}}
+                </ul>
+            </div>
+            {{end}}
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-4 justify-center">
+            <a href="/fitness" class="px-4 py-2 mt-10 bg-blue-600 text-white rounded shadow-lg hover:bg-blue-700">
+                Go to Fitness Planner
+            </a>
+            <a href="/nutrition" class="px-4 py-2 mt-10 bg-blue-600 text-white rounded shadow-lg hover:bg-blue-700">
+                Go to Diet Planner
+            </a>
+        </div>
+    {{end}}
+</div>
+{{end}}

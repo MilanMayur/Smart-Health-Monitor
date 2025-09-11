@@ -1,0 +1,116 @@
+<!-- web/pages/nutrition.html -->
+{{define "content"}}
+<div class="space-y-6 mx-auto max-w-4xl">
+    <h1 class="text-3xl font-bold mb-4 text-center">Nutrition Planner</h1>
+
+    {{if .Loading}}
+        <div class="p-6 text-center text-gray-600">Loading...</div>
+    {{else if .NoPlan}}
+        <!-- No Plan Available -->
+        <div class="text-center bg-yellow-100 border border-yellow-300 text-yellow-700 p-4 rounded mb-4 bg-gradient-to-br from-white to-blue-100 opacity-90">
+            <h2 class="text-lg font-semibold text-red-600 mb-2">No Nutrition Plan Available</h2>
+            <p>
+                Please complete your health prediction to receive a personalized nutrition plan.
+            </p>
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="/health" class="px-4 py-2 bg-blue-600 text-white rounded shadow-lg hover:bg-blue-700">
+                    Take your First Prediction
+                </a>
+            </div>
+        </div>
+    {{else}}
+        <!-- Calorie Intake -->
+        {{if .Nutrition.Calories}}
+        <div class="bg-white p-4 shadow rounded mb-5 bg-white">
+            <h2 class="text-lg font-semibold mb-2">Recommended Daily Calorie Intake</h2>
+            <p class="text-gray-700">
+                Based on your BMI, your recommended intake is around
+                <span class="font-semibold">{{.Nutrition.Calories}} kcal/day</span>.
+            </p>
+        </div>
+        {{end}}
+
+        <!-- Today's Nutrition Plan -->
+        {{if .Nutrition.TodayMeals}}
+            <div class="mb-5 p-4 bg-white rounded shadow">
+                <h2 class="text-lg font-semibold mb-2">
+                    Today's Personalized Meals ({{.Nutrition.Today}})
+                </h2>
+                <ul class="list-disc pl-6 text-gray-700 border-l-4 border-blue-500">
+                    <li><strong>Breakfast:</strong> {{.Nutrition.TodayMeals.Breakfast}}</li>
+                    <li><strong>Lunch:</strong> {{.Nutrition.TodayMeals.Lunch}}</li>
+                    <li><strong>Dinner:</strong> {{.Nutrition.TodayMeals.Dinner}}</li>
+                </ul>
+            </div>
+        {{end}}
+
+        <!-- Full Week Nutrition Plan -->
+        <div class="bg-white p-4 shadow rounded">
+            <div class="flex justify-between items-center mb-2">
+                <h2 class="text-lg font-semibold">
+                    Full Week Plan ({{.Nutrition.CategoryDisplay}})
+                </h2>
+                <button id="toggleFullWeek" aria-expanded="false" aria-controls="fullWeekContent" 
+                    class="text-xl font-bold px-3 py-1 rounded hover:bg-gray-300 select-none">
+                    + <!-- minus sign initially -->
+                </button>
+            </div>
+            <div id="fullWeekContent" class="grid grid-cols-1 md:grid-cols-3 gap-4" style="display:none;">
+                {{range .Nutrition.FullWeek}}
+                <div class="mb-4 bg-gradient-to-br from-white to-blue-200 opacity-90 border border-gray-200 shadow-md rounded p-4 transition-all hover:scale-105 hover:shadow">
+                    <h3 class="text-md text-center font-bold">{{.Day}}</h3>
+                    <ul class="list-disc pl-6 text-gray-700 border-l-4 border-blue-500">
+                        <li><strong>Breakfast:</strong> {{.Meals.Breakfast}}</li>
+                        <li><strong>Lunch:</strong> {{.Meals.Lunch}}</li>
+                        <li><strong>Dinner:</strong> {{.Meals.Dinner}}</li>
+                    </ul>
+                </div>
+                {{end}}
+            </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="bg-white p-4 shadow rounded bg-white">
+            <h2 class="text-lg font-semibold mb-2">Health Tips</h2>
+            {{if gt (len .Nutrition.Tips) 0}}
+                <ul class="list-disc pl-6 text-gray-700">
+                    {{range .Nutrition.Tips}}
+                        <li>{{.}}</li>
+                    {{end}}
+                </ul>
+            {{else}}
+                <p class="text-gray-500">No health tips available.</p>
+            {{end}}
+        </div>
+    {{end}}
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggleBtn = document.getElementById('toggleFullWeek');
+        const content = document.getElementById('fullWeekContent');
+
+        console.log("DOM loaded. Button:", toggleBtn, "Content:", content);  // Debug log
+
+        if (!toggleBtn || !content) {
+            console.warn("Toggle button or content not found");
+            return;
+        }
+        
+        //if (!toggleBtn || !content) return;
+
+        toggleBtn.addEventListener('click', function() {
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            if (expanded) {
+                content.style.display = 'none';
+                this.setAttribute('aria-expanded', 'false');
+                this.innerHTML = '+';
+            } else {
+                content.style.display = 'grid';
+                this.setAttribute('aria-expanded', 'true');
+                this.innerHTML = '−';
+            }
+        });
+    })();
+</script>
+{{end}}

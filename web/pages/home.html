@@ -1,0 +1,118 @@
+<!-- web/pages/home.html -->
+{{define "content"}}
+<section>
+
+<!-- Background images (switch on scroll) -->
+<div id="bg1" class="fixed top-0 left-0 w-screen h-screen -z-20 bg-cover bg-center bg-no-repeat bg-fixed transition-opacity duration-1000 opacity-100"
+     style="background-image: url('/static/root_background.jpg');"></div>
+<div id="bg2" class="fixed top-0 left-0 w-screen h-screen -z-10 bg-cover bg-center bg-no-repeat bg-fixed transition-opacity duration-1000 opacity-0"
+     style="background-image: url('/static/background1.png');"></div>
+
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col items-center justify-center text-center px-4">
+    <h1 class="mt-10 text-5xl font-extrabold text-white text-shadow">Welcome to Smart Health Monitor</h1>
+    <p class="mt-20 text-xl text-white max-w-xl">
+        Track your vital health parameters, receive risk predictions powered by AI, and view reports securely.
+    </p>
+    <button onclick="location.href='/login'"
+        class="mt-10 px-6 py-3 text-white rounded-lg cursor-pointer bg-gradient-to-r from-blue-500 to-blue-700 hover:shadow-lg hover:from-blue-600 hover:to-blue-800">
+        Get Started
+    </button>
+    <div class="mt-8 animate-bounce text-white text-sm">↓ Scroll Down</div>
+</section>
+
+<!-- Info Section -->
+<section id="second-section" class="px-4 flex flex-col items-center justify-start">
+    <h1 class="text-3xl font-bold mb-8 text-white text-shadow">How It Works?</h1>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl text-center">
+        <div class="p-4 bg-gradient-to-br from-white to-blue-200 text-black rounded-xl shadow transition-all hover:scale-105 hover:shadow-lg">
+            <h3 class="font-bold text-lg mb-2">1. Enter Your Health Data</h3>
+            <p class="text-gray-700">Input your vitals like blood pressure, glucose, BMI, and more.</p>
+        </div>
+        <div class="p-4 bg-gradient-to-br from-white to-red-200 text-black rounded-xl shadow transition-all hover:scale-105 hover:shadow-lg">
+            <h3 class="font-bold text-lg mb-2">2. Get Instant Risk Predictions</h3>
+            <p class="text-gray-700">AI models analyze your data to predict risks of diabetes, heart disease, and stroke.</p>
+        </div>
+        <div class="p-4 bg-gradient-to-br from-white to-green-200 text-black rounded-xl shadow transition-all hover:scale-105 hover:shadow-lg">
+            <h3 class="font-bold text-lg mb-2">3. Personalized Plans</h3>
+            <p class="text-gray-700">Receive fitness routines and nutrition tips tailored to your health status.</p>
+        </div>
+    </div>
+
+    <div class="mt-20 text-center max-w-2xl">
+        <h2 class="text-3xl font-bold mb-4 text-white text-shadow">Why Smart Health Monitor?</h2>
+        <p class="text-white">
+            Built with advanced AI models, our platform empowers individuals to monitor their 
+            health and prevent serious conditions before they arise — all in a secure and 
+            user-friendly interface.
+        </p>
+    </div>
+
+    <!-- What Do You Get -->
+    <div class="relative w-[420px] h-[420px] text-center mx-auto mt-20 mb-10">
+        <h2 class="text-3xl font-bold mb-4 text-white text-shadow">What Do You Get?</h2>
+        <!-- Circle 1 (top, icon spot) -->
+        <div class="absolute top-15 left-1/2 transform -translate-x-1/2 w-36 h-36 transition-all hover:scale-105 hover:shadow-lg text-center rounded-full shadow-md flex items-center justify-center p-4 text-sm font-bold text-white flex flex-col bg-gradient-to-br from-blue-400 to-teal-200">
+            <!-- Insert Heart SVG or <img> here -->
+            <span class="text-shadow">Real-Time<br/>Health Tracking</span>
+        </div>
+        <div class="absolute top-[140px] left-[0px] w-36 h-36 transition-all hover:scale-105 hover:shadow-lg text-center rounded-full shadow-md flex items-center justify-center p-4 text-sm font-bold text-white flex flex-col bg-gradient-to-br from-red-400 to-pink-200">
+            <!-- Insert Activity SVG or <img> here -->
+            <span class="text-shadow">Risk<br/>Assessments</span>
+        </div>
+        <div class="absolute top-[140px] right-[0px] w-36 h-36 transition-all hover:scale-105 hover:shadow-lg text-center rounded-full shadow-md flex items-center justify-center p-4 text-sm font-bold text-white flex flex-col bg-gradient-to-br from-orange-400 to-stone-200">
+            <!-- Dumbbell SVG or <img> here -->
+            <span class="text-shadow">Personalized<br/>Workout</span>
+        </div>
+        <div class="absolute top-[290px] left-[55px] w-36 h-36 transition-all hover:scale-105 hover:shadow-lg text-center rounded-full shadow-md flex items-center justify-center p-4 text-sm font-bold text-white flex flex-col bg-gradient-to-br from-yellow-400 to-emerald-200">
+            <!-- Utensils SVG or <img> here -->
+            <span class="text-shadow">Customized<br/>Diet</span>
+        </div>
+        <div class="absolute top-[290px] right-[55px] w-36 h-36 transition-all hover:scale-105 hover:shadow-lg text-center rounded-full shadow-md flex items-center justify-center p-4 text-sm font-bold text-white flex flex-col bg-gradient-to-br from-violet-400 to-sky-200">
+            <!-- Lock SVG or <img> here -->
+            <span class="text-shadow">Secure<br/>Storage</span>
+        </div>
+    </div>
+
+    <button id="topBtn" class="hidden fixed bottom-12 right-6 bg-blue-600 text-white px-4 py-2 
+                                rounded-full shadow-lg hover:bg-blue-800 transition-all">
+        ↑ Top
+    </button>
+</section>
+
+<!-- Vanilla JS for scroll/background/button toggling -->
+<script>
+    // Scroll up button show/hide
+    window.addEventListener('scroll', function() {
+        const btn = document.getElementById('topBtn');
+        if (window.scrollY > 300) {
+            btn.classList.remove('hidden');
+        } else {
+            btn.classList.add('hidden');
+        }
+    });
+    document.getElementById('topBtn').onclick = () =>
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // IntersectionObserver to switch backgrounds
+    const section = document.getElementById('second-section');
+    const bg1 = document.getElementById('bg1');
+    const bg2 = document.getElementById('bg2');
+    if (section && bg1 && bg2) {
+        const observer = new window.IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    bg1.classList.replace('opacity-100', 'opacity-0');
+                    bg2.classList.replace('opacity-0', 'opacity-100');
+                } else {
+                    bg1.classList.replace('opacity-0', 'opacity-100');
+                    bg2.classList.replace('opacity-100', 'opacity-0');
+                }
+            },
+            { threshold: 0.5 }
+        );
+        observer.observe(section);
+    }
+</script>
+</section>
+{{end}}

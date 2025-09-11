@@ -1,0 +1,40 @@
+<!-- web/pages/health.html -->
+{{define "content"}}
+<div class="max-w-4xl mx-auto bg-white rounded-xl shadow p-8">
+  <h1 class="text-2xl font-bold mb-6 text-center text-indigo-700">Health Predictions</h1>
+  <p class="mb-6 text-gray-600 text-center">Choose a prediction type below:</p>
+  <div class="grid grid-row-1 md:grid-row-3 gap-6">
+    <a href="/health/diabetes" class="p-6 rounded-lg bg-blue-50 hover:bg-blue-100 border border-blue-200 text-center shadow">
+      <h2 class="text-xl font-semibold mb-2 text-blue-700 hover:underline">Diabetes</h2>
+      <p className="text-justify">
+        Diabetes prediction uses machine learning models to identify individuals 
+        at risk of developing diabetes. These models analyze data to predict the 
+        likelihood of diabetes based on various factors like age, gender, BMI, 
+        blood sugar levels, and blood pressure. Early detection and prevention are 
+        key to managing diabetes and reducing complications.
+      </p>
+      <p class="text-sm text-gray-600 mt-5 hover:underline">Check your diabetes risk</p>
+    </a>
+    <a href="/health/heart" class="p-6 rounded-lg bg-green-50 hover:bg-green-100 border border-green-200 text-center shadow">
+      <h2 class="text-xl font-semibold mb-2 text-green-700 hover:underline">Heart Disease</h2>
+      <p className="text-justify">
+        Predicting heart disease involves assessing an individual's risk based on 
+        various factors, including age, sex, and lifestyle choices. Risk factors 
+        like high blood pressure, high cholesterol, diabetes, and smoking 
+        significantly increase the chances of heart disease.
+      </p>
+      <p class="text-sm text-gray-600 mt-5 hover:underline">Assess your heart condition</p>
+    </a>
+    <a href="/health/stroke" class="p-6 rounded-lg bg-red-50 hover:bg-red-100 border border-red-200 text-center shadow">
+      <h2 class="text-xl font-semibold mb-2 text-red-700 hover:underline">Stroke</h2>
+      <p className="text-justify">
+        Predicting stroke risk involves identifying factors that increase 
+        the likelihood of a stroke, such as age, high blood pressure, heart disease, 
+        diabetes, smoking, and a history of TIAs. ML helps analyze these risks with 
+        more accuracy.
+      </p>
+      <p class="text-sm text-gray-600 mt-5 hover:underline">Predict stroke likelihood</p>
+    </a>
+  </div>
+</div>
+{{end}}

@@ -1,0 +1,44 @@
+<!-- web/pages/register.html -->
+{{define "content"}}
+<div id="bg2" class="fixed top-0 left-0 w-screen h-screen -z-10 bg-cover bg-center bg-no-repeat 
+                    bg-fixed"
+     style="background-image: url('/static/background1.png');"></div>
+<div class="max-w-md mx-auto text-center bg-white p-10 mt-20 rounded-xl shadow">
+    <h2 class="text-xl font-semibold mb-4">Create account</h2>
+    <form id="registerForm" class="space-y-3">
+        <input name="firstName" placeholder="First name" class="w-full border p-2 rounded"/>
+        <input name="lastName" placeholder="Last name" class="w-full border p-2 rounded"/>
+        <input name="email" type="email" placeholder="Email" class="w-full border p-2 rounded"/>
+        <input name="password" type="password" placeholder="Password" class="w-full border p-2 rounded"/>
+        <button class="w-full bg-black text-white py-2 rounded">Register</button>
+    </form>
+    {{if .Error}}
+    <p class="m-3 text-red-600 text-sm">{{.Error}}</p>
+    {{end}}
+    <p class="text-sm mt-3">Already have an account? <a href="/login" class="underline">Login</a></p>
+</div>
+
+<script>
+    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const body = {
+            firstName: e.target.firstName.value,
+            lastName: e.target.lastName.value,
+            email: e.target.email.value,
+            password: e.target.password.value
+        };
+        const res = await fetch('/auth/register', {
+                        method: 'POST',
+                        headers: {'Content-Type':'application/json'},
+                        body: JSON.stringify(body),
+                        credentials: 'include'
+                    });
+        if (res.ok) {
+            window.location.href = '/login';
+        } else {
+            const txt = await res.text();
+            window.location.href = '/register?error=' + encodeURIComponent(txt || 'Registration failed');
+        }
+    });
+</script>
+{{end}}

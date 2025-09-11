@@ -1,0 +1,130 @@
+<!-- web/pages/ai-chat.html -->
+{{define "content"}}
+<div id="content" class="p-4">
+  <h1 class="text-3xl font-bold mb-4 text-center">Smart Health Chat-Bot</h1>
+  <div class="chat-container mx-auto">
+    <div class="chat-header">AI Health Assistant</div>
+    <div id="chat-messages" class="chat-messages"></div>
+    <div class="chat-input">
+      <input id="userMessage" type="text" placeholder="Type your health question...">
+      <button id="sendBtn" class="btn btn-primary">Send</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .chat-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+  }
+  .chat-header {
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .chat-messages {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+  }
+  .message {
+    margin-bottom: 10px;
+    padding: 8px 14px;
+    border-radius: 15px;
+    max-width: 75%;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
+  .message.user {
+    background: #007bff;
+    color: white;
+    margin-left: auto;
+  }
+  .message.bot {
+    background: #e9ecef;
+    color: #212529;
+    margin-right: auto;
+  }
+  .chat-input {
+    display: flex;
+    padding: 10px;
+    background: #f1f1f1;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  .chat-input input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-right: 8px;
+  }
+  .chat-input button {
+    border-radius: 20px;
+  }
+</style>
+
+<script>
+  const chatMessages = document.getElementById("chat-messages");
+  const userMessageInput = document.getElementById("userMessage");
+  const sendBtn = document.getElementById("sendBtn");
+
+  function addMessage(content, sender) {
+    const div = document.createElement("div");
+    div.classList.add("message", sender);
+    div.textContent = content;
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  async function sendMessage() {
+    const message = userMessageInput.value.trim();
+    if (!message) return;
+
+    addMessage(message, "user");
+    userMessageInput.value = "";
+
+    try {
+      const res = await fetch("/ai/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userId: "{{.UserID}}", 
+          message: message
+        }),
+      });
+
+      if (!res.ok) {
+        const errText = await res.text();
+        throw new Error(errText || "Failed to get response");
+      }
+
+      const data = await res.json();
+      addMessage(data.reply, "bot");
+    } catch (err) {
+      console.error(err);
+      addMessage("⚠️ " + (err.message || "Error connecting to AI service."), "bot");
+    }
+  }
+
+  sendBtn.addEventListener("click", sendMessage);
+  userMessageInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
+</script>
+{{end}}

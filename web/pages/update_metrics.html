@@ -1,0 +1,85 @@
+<!-- web/pages/update_metrics.html -->
+{{define "content"}}
+<div class="max-w-md mx-auto bg-white shadow-md rounded-lg p-6">
+  <h2 class="text-2xl text-center font-bold mb-6">Update Health Metrics</h2>
+
+  <form id="updateMetricsForm" action="/user/update-metrics" method="POST" 
+        class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+    <div>
+      <label for="age" class="block text-gray-600 font-medium mb-1">Age</label>
+      <input id="age" name="age" type="number" value="{{.Metrics.Age}}" 
+              class="w-full border rounded px-3 py-2" required />
+    </div>
+    <div>
+      <label for="sex" class="block text-gray-600 font-medium mb-1">Sex</label>
+      <select id="sex" name="sex" class="w-full border rounded px-3 py-2" required>
+        <option value="0" {{if eq .Metrics.Sex 0}}selected{{end}}>Female</option>
+        <option value="1" {{if eq .Metrics.Sex 1}}selected{{end}}>Male</option>
+      </select>
+    </div>
+    <div>
+      <label for="bmi" class="block text-gray-600 font-medium mb-1">BMI</label>
+      <input id="bmi" name="bmi" type="number" step="0.1" value="{{.Metrics.BMI}}" 
+              class="w-full border rounded px-3 py-2" required />
+    </div>
+    <div>
+      <label for="bloodPressure" class="block text-gray-600 font-medium mb-1">Blood Pressure</label>
+      <input id="bloodPressure" name="bloodPressure" type="number" step="0.1" 
+              value="{{.Metrics.BloodPressure}}" class="w-full border rounded px-3 py-2" />
+    </div>
+    <div>
+      <label for="glucose" class="block text-gray-600 font-medium mb-1">Glucose</label>
+      <input id="glucose" name="glucose" type="number" step="0.1" value="{{.Metrics.Glucose}}" 
+              class="w-full border rounded px-3 py-2" />
+    </div>
+    <div>
+      <label for="insulin" class="block text-gray-600 font-medium mb-1">Insulin</label>
+      <input id="insulin" name="insulin" type="number" step="0.1" value="{{.Metrics.Insulin}}" 
+              class="w-full border rounded px-3 py-2" />
+    </div>
+    <div>
+      <label for="cholesterol" class="block text-gray-600 font-medium mb-1">Cholesterol</label>
+      <input id="cholesterol" name="cholesterol" type="number" step="0.1" 
+              value="{{.Metrics.Cholesterol}}" class="w-full border rounded px-3 py-2" />
+    </div>
+    <div>
+      <label for="maxHeartRate" class="block text-gray-600 font-medium mb-1">Max Heart Rate</label>
+      <input id="maxHeartRate" name="maxHeartRate" type="number" step="0.1" 
+              value="{{.Metrics.MaxHeartRate}}" class="w-full border rounded px-3 py-2" />
+    </div>
+    <div>
+      <label for="restingECG" class="block text-gray-600 font-medium mb-1">Resting ECG</label>
+      <select id="restingECG" name="restingECG" required class="w-full border rounded px-3 py-2">
+        <option value="0" {{if eq .Metrics.RestingECG 0}}selected{{end}}>Normal</option>
+        <option value="1" {{if eq .Metrics.RestingECG 1}}selected{{end}}>ST-T Wave Abnormality</option>
+        <option value="2" {{if eq .Metrics.RestingECG 2}}selected{{end}}>Left Ventricular Hypertrophy</option>
+      </select>
+    </div>
+  </form>
+  <div class="flex justify-between items-center">
+    <a href="/user/profile" class="text-sm text-gray-500 hover:underline">
+       ← Back to Profile
+    </a>
+    <button type="submit" form="updateMetricsForm"
+            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+      Save Metrics
+    </button>
+  </div>
+  {{if .Success}}
+  <div class="m-4 p-4 bg-green-100 border border-green-400 text-center text-green-700 rounded">
+    {{.Success}}
+  </div>
+{{end}}
+</div>
+
+<script>
+  setTimeout(() => {
+    const msg = document.getElementById('successMessage');
+    if (msg) {
+      msg.style.transition = "opacity 0.5s ease-out";
+      msg.style.opacity = "0";
+      setTimeout(() => msg.remove(), 500);
+    }
+  }, 3000);
+</script>
+{{end}}

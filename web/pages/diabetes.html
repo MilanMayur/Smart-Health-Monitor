@@ -1,0 +1,100 @@
+<!-- web/pages/diabetes.html -->
+{{define "content"}}
+<div class="max-w-3xl mx-auto bg-white rounded-xl shadow p-8">
+  <!-- Header -->
+  <h1 class="text-2xl font-bold mb-4 text-center text-blue-700">Diabetes Prediction</h1>
+  <p class="text-gray-600 mb-6 text-center">
+    Diabetes is a chronic condition that affects how your body processes blood sugar (glucose). 
+    Use this tool to assess your diabetes risk by entering some basic health information.
+  </p>
+
+  {{if .Error}}
+  <div class="mb-4 p-3 bg-red-100 text-red-700 rounded">
+    {{.Error}}
+  </div>
+  {{end}}
+
+  <!-- Form -->
+  <form action="/health/diabetes" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div>
+        <label class="block text-sm font-medium text-gray-700">Age</label>
+        <input type="number" name="age" required class="mt-1 block w-full border rounded-md p-2"/>
+      </div>
+    
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Glucose</label>
+      <input type="number" name="glucose" required class="mt-1 block w-full border rounded-md p-2"/>
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Blood Pressure</label>
+      <input type="number" name="blood_pressure" required class="mt-1 block w-full border rounded-md p-2"/>
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Skin Thickness</label>
+      <input type="number" name="skin_thickness" required class="mt-1 block w-full border rounded-md p-2"/>
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Insulin</label>
+      <input type="number" name="insulin" required class="mt-1 block w-full border rounded-md p-2"/>
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">BMI</label>
+      <input type="number" step="0.1" name="bmi" required class="mt-1 block w-full border rounded-md p-2"/>
+    </div>
+
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Diabetes Pedigree Function</label>
+      <input type="number" step="0.01" name="dpf" required class="mt-1 block w-full border rounded-md p-2"/>
+    </div>
+
+    <div>
+        <label class="block text-sm font-medium text-gray-700">Pregnancies</label>
+        <input type="number" name="pregnancies" required class="mt-1 block w-full border rounded-md p-2 focus:ring-blue-500 focus:border-blue-500"/>
+    </div>
+
+    <div class="md:col-span-2 text-center mt-4">
+      <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md shadow">
+        Predict
+      </button>
+    </div>
+  </form>
+
+  <!-- Result -->
+  {{if and .Prediction .Probability .RiskCategory}}
+  <div
+    class="mt-6 p-4 border rounded-lg
+           {{if eq .RiskCategory "high"}}bg-red-50 border-red-300
+           {{else if eq .RiskCategory "moderate"}}bg-amber-50 border-amber-300
+           {{else if eq .RiskCategory "low"}}bg-green-50 border-green-300
+           {{else}}bg-gray-50 border-gray-300{{end}}">
+    <h2 class="text-lg font-semibold mb-2">
+      Prediction Result:
+    </h2>
+    <p class="text-gray-700 mb-1">
+      {{if gt .Probability 30.0}}
+        ⚠️ <strong>Positive:</strong> You may be at risk for diabetes. Please consult a healthcare professional.
+      {{else}}
+        ✅ <strong>Negative:</strong> You are not at risk for diabetes based on the provided details.
+      {{end}}
+    </p>
+    <p class="font-semibold">
+      Probability: {{printf "%.2f" .Probability}}%
+    </p>
+    <p class="font-semibold">
+      Risk Category:
+      <span
+        class="{{if eq .RiskCategory "high"}}text-red-600
+                {{else if eq .RiskCategory "moderate"}}text-amber-600
+                {{else if eq .RiskCategory "low"}}text-green-600
+                {{else}}text-gray-600{{end}}">
+        {{.RiskCategory}}
+      </span>
+    </p>
+  </div>
+  {{end}}
+</div>
+{{end}}

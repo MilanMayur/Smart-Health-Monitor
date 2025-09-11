@@ -1,0 +1,99 @@
+<!-- web/pages/dashboard.html -->
+{{define "content"}}
+<div class="p-2 bg-transparent">
+    <h1 class="text-3xl font-bold text-center mb-4">Welcome to Your Smart Health Dashboard</h1>
+    <p class="text-gray-700 text-center mb-4">View your latest health metrics and AI-powered predictions.</p>
+
+    {{if .Loading}}
+        <div class="p-6 text-center text-gray-600">Loading dashboard...</div>
+    {{else if not .Metrics}}
+        <div class="text-center bg-yellow-100 border border-yellow-300 text-yellow-700 p-4 rounded mb-4 bg-gradient-to-br from-white to-blue-100 opacity-90">
+            <h2 class="text-lg font-semibold text-red-600 mb-2">No recent health metrics found.</h2>
+            <p>Start by taking a prediction test to populate your dashboard.</p>
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="/health" class="px-4 py-2 bg-blue-600 text-white rounded shadow-lg hover:bg-blue-700">Take your First Prediction</a>
+            </div>
+        </div>
+    {{else}}
+        <p class="text-sm text-gray-500 text-center mt-4">Last updated on {{.UpdatedAtFormatted}}</p>
+
+        <!-- Vitals Section -->
+        <h2 class="text-xl font-semibold mt-5 mb-4 text-center text-gray-800">Vitals</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mx-auto max-w-4xl">
+            {{range .Vitals}}
+            <div class="bg-white text-center backdrop-blur-sm shadow rounded-lg p-4">
+                <h2 class="text-lg font-semibold">{{.Title}}</h2>
+                <p class="text-xl {{.Color}}">{{.Value}}</p>
+            </div>
+            {{end}}
+        </div>
+
+        <!-- Risk Section -->
+        <h2 class="text-xl font-semibold mt-10 mb-4 text-center text-gray-800">AI-Powered Risk Predictions</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mx-auto max-w-4xl">
+            {{range .Risks}}
+            <div class="bg-white text-center backdrop-blur-sm shadow rounded-lg p-4">
+                <h2 class="text-lg font-semibold">{{.Title}}</h2>
+                <p class="text-xl {{.Color}}">{{.Value}}</p>
+                <p class="text-sm text-gray-500">Probability: {{.Probability}}%</p>
+            </div>
+            {{end}}
+        </div>
+
+        <!-- Chart Section -->
+        <h2 class="text-xl font-semibold mt-10 mb-4 text-center text-gray-800">Risk Overview</h2>
+        <div class="bg-white rounded-lg shadow p-4 max-w-4xl mx-auto">
+            <div>
+                {{range .RiskChartData}}
+                <div class="my-2 flex items-center justify-between max-w-2xl mx-auto">
+                    <!-- Name container aligned left -->
+                    <div class="flex-1 text-lg text-left">
+                        <span><strong>{{.Name}}</strong></span>
+                    </div>
+            
+                    <!-- Chart container aligned right -->
+                    <div class="flex-1 bg-gray-200 rounded h-6 w-64 relative ml-4">
+                        <div class="absolute top-0 left-0 h-6 rounded
+                            {{if lt .Value 30}}bg-green-600
+                            {{else if lt .Value 70}}bg-orange-600
+                            {{else}}bg-red-600
+                            {{end}}"
+                            style="width: {{.Value}}%;">
+                        </div>
+                        <span class="absolute right-2 top-1 text-sm font-semibold">{{.Value}}%</span>
+                    </div>
+                </div>
+                {{end}}    
+            </div>         
+        </div>
+    {{end}}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    (async function(){
+        const res = await fetch('/metrics', { credentials: 'include' });
+        const data = res.ok ? await res.json() : { metrics: [] };
+        const labels = (data.metrics || []).map(m => new Date(m.createdAt).toLocaleDateString());
+        const values = (data.metrics || []).map(m => m.value);
+
+        const ctx = document.getElementById('metricsChart').getContext('2d');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'line',
+                data: { labels, datasets: [{ label: 'Metric', data: values, borderColor: 'rgb(59, 130, 246)', backgroundColor: 'rgba(59,130,246,0.3)', fill: true }] },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+
+        const logoutForm = document.getElementById('logoutForm');
+        if (logoutForm) {
+            logoutForm.addEventListener('submit', async (e)=>{
+                e.preventDefault();
+                await fetch('/auth/logout', { method:'POST', credentials:'include' });
+                window.location.href = '/login';
+            });
+        }
+    })();
+</script>
+{{end}}

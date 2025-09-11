@@ -1,0 +1,26 @@
+<!-- web/layouts/base.html -->
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Smart Health Monitor</title>
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js via CDN (for dashboard charts later) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="/static/logo.png"/>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-50">
+    {{if .IsAuthenticated}}
+        {{template "private" .}}
+    {{else}}
+        {{template "public" .}}
+    {{end}}
+    
+    {{template "footer" .}}
+</body>
+</html>
+{{end}}
+

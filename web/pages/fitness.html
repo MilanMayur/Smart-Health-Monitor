@@ -1,0 +1,64 @@
+<!-- web/pages/fitness.html -->
+{{define "content"}}
+<div class="space-y-6 mx-auto max-w-4xl">
+    <h1 class="text-3xl font-bold mb-4 text-center">Fitness Planner</h1>
+
+    {{if .Loading}}
+        <div class="p-6 text-center text-gray-600">Loading...</div>
+    {{else if .NoPlan}}
+        <!-- No Plan Available -->
+        <div class="text-center bg-yellow-100 border border-yellow-300 text-yellow-700 p-4 
+                    rounded mb-4 bg-gradient-to-br from-white to-blue-100 opacity-90">
+            <h2 class="text-lg font-semibold text-red-600 mb-2">No Fitness Plan Available</h2>
+            <p>
+                Please complete your health prediction to receive a personalized fitness plan.
+            </p>
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="/health" class="px-4 py-2 bg-blue-600 text-white rounded shadow-lg 
+                    hover:bg-blue-700">
+                    Take your First Prediction
+                </a>
+            </div>
+        </div>
+    {{else}}
+        {{/* Display workouts grouped by day */}}
+        <div class="bg-white p-4 rounded shadow grid grid-cols-1 md:grid-cols-2 gap-4 
+                    justify-center mx-auto max-w-6xl">
+            {{/* Loop over ordered days */}}
+            {{ range $idx, $day := .OrderedDays }}
+                {{ $workouts := index $.WorkoutsByDay $day }}
+                {{ if $workouts }}
+                <div class="overflow-y-auto mb-1 p-4 bg-white rounded shadow transition-all 
+                            hover:shadow-lg bg-gradient-to-br from-white to-blue-200 opacity-90">
+                    <h2 class="text-xl font-bold mb-2 text-indigo-700">{{ $day }}</h2>
+          
+                    {{/* Loop over workouts for the day */}}
+                    {{ range $i, $w := $workouts }}
+                    <div class="pl-4 border-l-4 border-blue-500">
+                      <p class="text-lg text-black">{{ $w.Workout }}</p>
+                      <p class="text-sm text-black mt-1">{{ $w.Description }}</p>
+                      <p class="text-xs text-gray-600">Duration: {{ $w.Duration }} mins</p>
+                    </div>
+                    {{ end }}
+          
+                </div>
+                {{ end }}
+            {{ end }}
+        </div> 
+
+        {{/* Show tips if available */}}
+        {{ if .Tips }}
+        <section class="bg-white p-4 rounded shadow">
+            <h2 class="text-xl font-semibold mb-3">Tips</h2>
+            <ul class="list-disc list-inside text-gray-700">
+                {{ range .Tips }}
+                <li>{{ . }}</li>
+                {{ end }}
+            </ul>
+        </section>
+        {{ else }}
+        <p class="text-center text-gray-500 italic">No fitness tips available.</p>
+        {{ end }}
+    {{end}}
+</div>
+{{end}}
