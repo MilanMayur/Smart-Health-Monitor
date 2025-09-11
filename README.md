@@ -92,7 +92,7 @@ Smart-Health-Monitor
     - SVM
     - XGBoost
 
-## ⚙️ Setup & Installation Using EC2
+## ⚙️ Setup & Installation Using AWS EC2
 
 1. Update System
 ```
